@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Crear mascota</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
+    @extends('layouts.default')
+    @section('titulo_pagina','Mascotas | Crear mascota')
+    @section('titulo','Mascotas')
+    @section('subtitulo','Crear mascota')
+    @section('contenido')
+
     <form action="{{route('mascotas.store')}}" method="post">
     @csrf
         <label>Especie</label>
@@ -30,5 +25,5 @@
         <br/>
         <button type="submit">Crear nueva mascota </button>
     </form>
-</body>
-</html>
+
+    @endsection
