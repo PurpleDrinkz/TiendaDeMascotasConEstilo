@@ -105,8 +105,14 @@ class MascotaController extends Controller
         $mascota->Nacimiento = $request->input('nacimiento');
 
         //Guardar cambios
-        $mascota->save();
-        return redirect()->route('mascotas.edit',$id);
+
+        $mascota = Mascota::find($id);
+
+        if ($mascota->save())
+        {
+        return redirect()->route('mascotas.index',$id)->with('exito', 'Mascota modificada con éxito.');
+        }
+        return redirect()->route('mascotas.index')->with('error', 'Error al modificar mascota.');;
     }
  
 
