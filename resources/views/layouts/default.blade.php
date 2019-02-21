@@ -116,7 +116,7 @@ desired effect
 
                 <form action="{{route('logout')}}" method="post">
                   @csrf
-                  <a  class="btn btn-default btn-flat">Cerrar Sesión</a>
+                  <button type="submit" class="btn btn-default btn-flat">Cerrar Sesión</button>
 
                 </form>
                 </div>
