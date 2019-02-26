@@ -11,6 +11,12 @@
 |
 */
 
+//Ruta está compuesta en 4 cosas
+//1.- URL
+//2.- Que controller y que funcion de ese controller responden a esa solicitud
+//3.- Nombre de la ruta (opcional)
+//4.- Metodo HTTP
+
 Route::get('/', function () {
     
     return redirect()->route('dashboard');
@@ -19,10 +25,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard','DashboardController@dashboard')->name('dashboard');
 Route::resource('mascotas', 'MascotaController');
-Route::get('starter','StarterController@starter')->name('starter');
-
+Route::get('/perfil', 'PerfilController@edit')->name('perfil.edit');
 Route::resource('especies', 'EspecieController');
-Route::get('starter2','Starter2Controller@starter2')->name('starter2');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes(['register' => false]);

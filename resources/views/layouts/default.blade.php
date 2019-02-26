@@ -90,17 +90,12 @@ desired effect
               <!-- The user image in the navbar-->
               <img src="/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Benjamín Ortega</span>
+              <span class="hidden-xs">{{Auth::user()->name}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
                 <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                <p>
-                  Benjamín Ortega - Web Developer
-                  <small>Miembro desde Nov. 2012</small>
-                </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
@@ -110,7 +105,7 @@ desired effect
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                  <a href="{{route('perfil.edit')}}" class="btn btn-default btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
 
@@ -141,7 +136,7 @@ desired effect
           <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{Auth::user()->name}}</p>
 
         </div>
       </div>
