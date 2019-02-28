@@ -68,8 +68,8 @@
 
                         <div class="form-group">
                             
-                            @if($usuario->foto)
-                            <img src="{{$usuario->foto}}}" class="img-responsive" style="width:200px; height:200px">
+                            @if($usuario->foto_perfil)
+                            <img src="/storage/{{$usuario->foto_perfil}}" class="img-responsive" style="width:200px; height:200px">
                             
                             @endif
                         </div>
