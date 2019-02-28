@@ -14,11 +14,30 @@
                 
                 <div class="box-body">
                     
-                    <form>
+                    <form method="POST" action="{{route('perfil.update', $usuario->id)}}" enctype="multipart/form-data">
+                    @csrf 
+                    @method('PUT')
+
+                    @if(Session::has('exito'))
+                    <div class="alert alert-success alert-dismissible" style="margin-top:20px;">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-check"></i>¡A huevo!</h4>
+                        {{ Session::get('exito') }}
+                    </div>
+                    @endif
+
+                    @if(Session::has('error'))
+                    <div class="alert alert-danger alert-dismissible" style="margin-top:20px;">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-ban"></i> Algo valio madre :(</h4>
+                        {{ Session::get('error') }}
+                    </div>
+                    @endif
+
                         <div class="form-group">
                             
                             <label>Nombre</label>
-                            <input type="text" class="form-control" value="{{$usuario->name}}">
+                            <input name="nombre" type="text" class="form-control" value="{{$usuario->name}}">
 
                         </div>
                         <div class="form-group">
@@ -43,7 +62,7 @@
                         <div class="form-group">
                             
                             <label>Foto</label>
-                            <input type="file" class="form-control">
+                            <input type="file" class="form-control" name="foto">
 
                         </div>
 
